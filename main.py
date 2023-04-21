@@ -1,23 +1,38 @@
 from openpyxl import Workbook
 import function
 
+input_list = []
+
+# ４行の入力をリストに追加する
+for i in range(5):
+    input_list.append(input())
+
+# 受け取ったリストを表示する
+print(input_list)
 
 
-class candidate:
+"""
+class MyClass():
+    def __init__(self, message):
+        self.value = message
+
+myinstance = MyClass("Hello!")
+print(myinstance.value)
+
+
+
+class hr:
     def __init__(self, name,mail,mobile,motive):
         self.name = name
         self.mail = mail
         self.mobile = mobile
         self.motive = motive
 
-    def print_tot(self):
-        tot = self.name+self.mobile+self.motive
-        print(tot)
 
-myinstance = candidate(1,2,3,4)
-myinstance.print_tot()
+myinstance = hr(1,2,3,4)
+print(myinstance.name)
+"""
 
-print(candidate.name)
 
 """
 name:
