@@ -3,13 +3,20 @@ import function
 
 input_list = []
 
-# ４行の入力をリストに追加する
 for i in range(5):
-    input_list.append(input())
+    input_list.append(str(input()))
 
-# 受け取ったリストを表示する
-print(input_list)
 
+
+"""
+name:Mark
+mail:asdfghjk12345@spring-j510.com
+mobile:+34-090123412341234
+adress:France paris
+reason for (one's) desire:As an AI language model
+"""
+
+print(input_list[2])
 
 """
 class MyClass():
