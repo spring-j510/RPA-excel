@@ -1,19 +1,31 @@
 from openpyxl import Workbook
 import function
 
-class Example():
 
-    def __init__(self, a,b,c):
-        self.num1 = a
-        self.num2 = b
-        self.num3 = c
+
+class candidate:
+    def __init__(self, name,mail,mobile,motive):
+        self.name = name
+        self.mail = mail
+        self.mobile = mobile
+        self.motive = motive
 
     def print_tot(self):
-        tot = self.num1+self.num2+self.num3
+        tot = self.name+self.mobile+self.motive
         print(tot)
 
-myinstance = Example(1,2,3)
+myinstance = candidate(1,2,3,4)
 myinstance.print_tot()
+
+print(candidate.name)
+
+"""
+name:
+mail:
+mobile:
+adress:
+reason for (one's) desire:
+"""
 
 
 # # ワークブックの新規作成と保存
