@@ -5,9 +5,6 @@ input_list = []
 
 for i in range(5):
     input_list.append(str(input()))
-
-
-
 """
 name:Mark
 mail:asdfghjk12345@spring-j510.com
@@ -16,32 +13,21 @@ adress:France paris
 reason for (one's) desire:As an AI language model
 """
 
-print(input_list[2])
-
-"""
-class MyClass():
-    def __init__(self, message):
-        self.value = message
-
-myinstance = MyClass("Hello!")
-print(myinstance.value)
-
-
-
 class hr:
-    def __init__(self, name,mail,mobile,motive):
-        self.name = name
+    def __init__(self,name,mail,mobile,motive):
+        self.name = name[:5]
         self.mail = mail
         self.mobile = mobile
         self.motive = motive
 
 
-myinstance = hr(1,2,3,4)
+myinstance = hr(input_list)
 print(myinstance.name)
+
 """
 
 
-"""
+
 name:
 mail:
 mobile:
