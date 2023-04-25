@@ -1,62 +1,38 @@
-from openpyxl import Workbook
+import pandas as pd
 import function
 
-class hr:
-    def __init__(self,name,mail,mobile,adress,motive):
-        self.name = name
-        self.mail = mail
-        self.mobile = mobile
-        self.adress = adress
-        self.motive = motive
+c_list = []
+count = 0
+flag = 0
+while flag != 1:
+    count += 1
+    input_list = []
+    for i in range(5):
+        input_str = str(input())
+        index_of_colon = input_str.find(":")
+        input_str = input_str[index_of_colon+1:]
+        input_list.append(input_str)
 
-input_list = []
+    input_list.insert(0, count)
+    c_list.append(input_list)
 
-for i in range(5):
-    input_list.append(str(input()))
+    input_str = input("Enterを押して続行。終了する場合は1を入力してください。")
 
-print(input_list)
+    if input_str == "":
+        print("続行します。")
+    elif input_str == "1":
+        print("終了します。")
+        flag = 1
 
-"""
-name:Mark
-mail:asdfghjk12345@spring-j510.com
-mobile:+34-090123412341234
-adress:France paris
-reason for (one's) desire:As an AI language model
-"""
+print(c_list)
 
-myinstance = hr(input_list[0],input_list[1],input_list[2],input_list[3],input_list[4])
-print(myinstance.name)
+df = pd.DataFrame(c_list, columns=['','Name', 'Mail','Mobile','Adress','reason for (ones) desire'])
+
+print(df)
 
 path = "xlsx/" + function.excel_title()
 
-# ワークブックの新規作成と保存
-wb = Workbook()
-wb.save(path)
+# データフレームをExcelファイルに変換する
+df.to_excel(path, index=False)
 
-# ワークブックの読み込み
-from openpyxl import load_workbook
-
-wb = load_workbook(path)
-
-# 変更したいシート名を指定する
-old_sheet_name = 'Sheet'
-new_sheet_name = 'summary'
-
-# シート名を変更する
-ws = wb[old_sheet_name]
-ws.title = new_sheet_name
-
-
-# ワークシートの選択
-ws = wb['summary']  # ワークシートを指定
-ws = wb.active  # アクティブなワークシートを選択
-
-# セルに書き込み
-ws['B2'] = 'No.'
-ws['C2'] = 'name'
-ws['D2'] = 'Mail'
-ws['E2'] = 'Mobile'
-ws['F2'] = 'Adress'
-ws['G2'] = 'reason for (ones) desire'
-
-wb.save(path)  # overwrite myworkbook.xlsx
+print("Excelファイルに変換しました。")
