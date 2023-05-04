@@ -16,12 +16,12 @@ while flag != 1:
     input_list.insert(0, count)
     c_list.append(input_list)
 
-    input_str = input("Enterを押して続行。終了する場合は1を入力してください。")
+    input_str = input("Press Enter to continue. To exit, enter 1.")
 
     if input_str == "":
-        print("続行します。")
+        print("To be continued.")
     elif input_str == "1":
-        print("終了します。")
+        print("Termination.")
         flag = 1
 
 print(c_list)
@@ -32,7 +32,6 @@ print(df)
 
 path = "xlsx/" + function.excel_title()
 
-# データフレームをExcelファイルに変換する
 df.to_excel(path, index=False)
 
-print("Excelファイルに変換しました。")
+print("Converted to Excel file.")
