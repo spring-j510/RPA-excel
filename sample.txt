@@ -1,5 +1,5 @@
 ---input---
-name:Becaam
+name:Beckham
 mail:hello@spring-j510.com
 mobile:+1-90123412341234
 adress:Liberty Island, New York
